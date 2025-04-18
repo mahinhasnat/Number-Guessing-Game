@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Number Guessing Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Number Guessing Game</h1>
+    <p>Guess a number between 1 and 100:</p>
+    <input type="number" id="guessInput" />
+    <button onclick="checkGuess()">Submit Guess</button>
+    <p id="resultMessage"></p>
+    <p id="attempts"></p>
+  </div>
+
+  <script>
+    let secretNumber = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+
+    function checkGuess() {
+      const guess = parseInt(document.getElementById("guessInput").value);
+      const resultMessage = document.getElementById("resultMessage");
+      const attemptsDisplay = document.getElementById("attempts");
+      attempts++;
+
+      if (guess === secretNumber) {
+        resultMessage.textContent = `Congratulations! You guessed it in ${attempts} attempts!`;
+        resultMessage.style.color = "green";
+      } else if (guess < secretNumber) {
+        resultMessage.textContent = "Too low! Try again.";
+        resultMessage.style.color = "orange";
+      } else {
+        resultMessage.textContent = "Too high! Try again.";
+        resultMessage.style.color = "orange";
+      }
+
+      attemptsDisplay.textContent = `Attempts: ${attempts}`;
+    }
+  </script>
+  <p id="attempts"></p>
+  </div>
+
+  <!-- Simple Footer -->
+  <footer>
+    <p>© 2025 Number Guessing Game | Created by Mahin Hasnat </p>
+  </footer>
+
+  <script>
+    let secretNumber = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+
+    function checkGuess() {
+      const guess = parseInt(document.getElementById("guessInput").value);
+      const resultMessage = document.getElementById("resultMessage");
+      const attemptsDisplay = document.getElementById("attempts");
+      attempts++;
+
+      if (guess === secretNumber) {
+        resultMessage.textContent = `Congratulations! You guessed it in ${attempts} attempts!`;
+        resultMessage.style.color = "green";
+      } else if (guess < secretNumber) {
+        resultMessage.textContent = "Too low! Try again.";
+        resultMessage.style.color = "orange";
+      } else {
+        resultMessage.textContent = "Too high! Try again.";
+        resultMessage.style.color = "orange";
+      }
+
+      attemptsDisplay.textContent = `Attempts: ${attempts}`;
+    }
+  </script>
+</body>
+</html>
+</body>
+</html>
